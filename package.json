@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "0.1.0",
+  "description": "api.tlks.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "make all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tlksio/api.git"
+  },
+  "keywords": [
+    "tlks",
+    "api",
+    "rest",
+    "json"
+  ],
+  "author": "Raül Pérez <repejota@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tlksio/api/issues"
+  },
+  "homepage": "https://github.com/tlksio/api"
+}
