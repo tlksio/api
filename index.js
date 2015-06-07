@@ -6,6 +6,15 @@ var config = require('./config.json');
 // express.js application
 var app = express();
 
+var router = express.Router();
+
+router.get('/teapot', function(req, res) {
+        res.status(418);
+        res.send('I\'m a teapot!');
+});
+
+app.use('/', router);
+
 // start the HTTP server
 var server = app.listen(config.port, function() {
     "use strict";
