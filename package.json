@@ -29,6 +29,7 @@
     "jshint-stylish": "^2.0.0"
   },
   "dependencies": {
-    "express": "^4.12.4"
+    "express": "^4.12.4",
+    "libtlks": "git://github.com/tlksio/libtlks#develop"
   }
 }

@@ -9,8 +9,12 @@ var app = express();
 var router = express.Router();
 
 router.get('/teapot', function(req, res) {
-        res.status(418);
-        res.send('I\'m a teapot!');
+    res.status(418);
+    res.send('I\'m a teapot!');
+});
+
+router.get('/talks', function(req, res) {
+
 });
 
 app.use('/', router);
