@@ -7,7 +7,13 @@ var config = require('./config.json');
 // express.js application
 var app = express();
 
+// express.js router class
 var router = express.Router();
+
+// using a simple logger
+router.use(logger({
+    path: "./log/app.log"
+}));
 
 router.get('/teapot', function(req, res) {
     res.status(418);

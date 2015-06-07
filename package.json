@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "express": "^4.12.4",
-    "express-logger": "0.0.3",
-    "libtlks": "git://github.com/tlksio/libtlks#develop"
+    "libtlks": "git://github.com/tlksio/libtlks#develop",
+    "morgan": "^1.5.3"
   }
 }
