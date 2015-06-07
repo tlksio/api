@@ -1,5 +1,6 @@
 /*jshint unused:false*/
 var express = require('express');
+var express = require('express-logger');
 
 var config = require('./config.json');
 
