@@ -21,5 +21,11 @@
   "bugs": {
     "url": "https://github.com/tlksio/api/issues"
   },
-  "homepage": "https://github.com/tlksio/api"
+  "homepage": "https://github.com/tlksio/api",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.0",
+    "jshint-reporter-jscs": "^0.1.0",
+    "jshint-stylish": "^2.0.0"
+  }
 }
