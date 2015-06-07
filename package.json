@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "express": "^4.12.4",
+    "file-stream-rotator": "0.0.6",
     "libtlks": "git://github.com/tlksio/libtlks#develop",
     "morgan": "^1.5.3"
   }

@@ -1,19 +1,16 @@
 /*jshint unused:false*/
 var express = require('express');
-var express = require('express-logger');
+var morgan = require('morgan');
 
 var config = require('./config.json');
 
 // express.js application
 var app = express();
 
+app.use(morgan('combined'));
+
 // express.js router class
 var router = express.Router();
-
-// using a simple logger
-router.use(logger({
-    path: "./log/app.log"
-}));
 
 router.get('/teapot', function(req, res) {
     res.status(418);
