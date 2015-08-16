@@ -22,7 +22,9 @@ var accessLogStream = FileStreamRotator.getStream({
 });
 
 // setup the logger
-app.use(morgan('combined', {stream: accessLogStream}));
+app.use(morgan('combined', {
+    stream: accessLogStream
+}));
 
 // express.js router class
 var router = express.Router();
