@@ -5,6 +5,7 @@ var fs = require('fs');
 var FileStreamRotator = require('file-stream-rotator');
 
 var config = require('./config.json');
+var pkg = require('./package.json');
 
 // express.js application
 var app = express();
@@ -32,6 +33,10 @@ var router = express.Router();
 router.get('/teapot', function(req, res) {
     res.status(418);
     res.send('I\'m a teapot!');
+});
+
+router.get('/version', function(req, res) {
+    res.send(pkg.version);
 });
 
 router.get('/talks', function(req, res) {
