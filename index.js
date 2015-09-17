@@ -64,7 +64,7 @@ router.get('/talks', function(req, res) {
 /**
  * GET /talk/:id
  */
-router.get('/talk/:id', function(req, res) {
+router.get('/talk/id/:id', function(req, res) {
     var id = req.params.id;
     libtlks.talk.get(config.mongodb, id, function(err, docs) {
         if (err) {
@@ -74,6 +74,27 @@ router.get('/talk/:id', function(req, res) {
         if (docs === null) {
             var context = {
                 message: "Talk ID not found.",
+                error: 404
+            }
+            res.json(404, context);
+        }
+        res.json(docs);
+    });
+});
+
+/**
+ * GET /talk/slug/:slug
+ */
+router.get('/talk/slug/:slug', function(req, res) {
+    var slug = req.params.slug;
+    libtlks.talk.getBySlug(config.mongodb, slug, function(err, docs) {
+        if (err) {
+            console.log(err);
+            process.exit(1);
+        }
+        if (docs === null) {
+            var context = {
+                message: "Talk Slug not found.",
                 error: 404
             }
             res.json(404, context);
