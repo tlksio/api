@@ -61,6 +61,27 @@ router.get('/talks', function(req, res) {
     });
 });
 
+/**
+ * GET /talk/:id
+ */
+router.get('/talk/:id', function(req, res) {
+    var id = req.params.id;
+    libtlks.talk.get(config.mongodb, id, function(err, docs) {
+        if (err) {
+            console.log(err);
+            process.exit(1);
+        }
+        if (docs === null) {
+            var context = {
+                message: "Talk ID not found.",
+                error: 404
+            }
+            res.json(404, context);
+        }
+        res.json(docs);
+    });
+});
+
 app.use('/', router);
 
 // start the HTTP server
