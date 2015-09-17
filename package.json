@@ -1,0 +1,37 @@
+{
+  "name": "api",
+  "version": "0.1.0",
+  "description": "api.tlks.io",
+  "main": "index.js",
+  "scripts": {
+    "test": "make all"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tlksio/api.git"
+  },
+  "keywords": [
+    "tlks",
+    "api",
+    "rest",
+    "json"
+  ],
+  "author": "Raül Pérez <repejota@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tlksio/api/issues"
+  },
+  "homepage": "https://github.com/tlksio/api",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-jshint": "^1.11.0",
+    "jshint-reporter-jscs": "^0.1.0",
+    "jshint-stylish": "^2.0.0"
+  },
+  "dependencies": {
+    "express": "^4.12.4",
+    "file-stream-rotator": "0.0.6",
+    "libtlks": "git://github.com/tlksio/libtlks#develop",
+    "morgan": "^1.5.3"
+  }
+}

@@ -1,0 +1,6 @@
+node_modules
+log
+config.json
+test/*.txt
+.idea
+*.iml
