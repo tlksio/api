@@ -62,7 +62,7 @@ router.get('/talks', function(req, res) {
 });
 
 /**
- * GET /talk/:id
+ * GET /talks/:id
  */
 router.get('/talks/id/:id', function(req, res) {
     var id = req.params.id;
@@ -83,7 +83,7 @@ router.get('/talks/id/:id', function(req, res) {
 });
 
 /**
- * GET /talk/slug/:slug
+ * GET /talks/slug/:slug
  */
 router.get('/talks/slug/:slug', function(req, res) {
     var slug = req.params.slug;
