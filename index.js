@@ -14,7 +14,9 @@ var app = express();
 
 var logDirectory = __dirname + '/log';
 // ensure log directory exists
-fs.existsSync(logDirectory) || fs.mkdirSync(logDirectory);
+if (fs.existsSync(logDirectory)) {
+  fs.mkdirSync(logDirectory);
+}
 
 // create a rotating write stream
 var accessLogStream = FileStreamRotator.getStream({
@@ -74,8 +76,8 @@ router.get('/talks/id/:id', function(req, res) {
         if (docs === null) {
             var context = {
                 message: "Talk ID not found.",
-                error: 404
-            }
+                error: 404,
+            };
             res.json(404, context);
         }
         res.json(docs);
@@ -95,8 +97,8 @@ router.get('/talks/slug/:slug', function(req, res) {
         if (docs === null) {
             var context = {
                 message: "Talk Slug not found.",
-                error: 404
-            }
+                error: 404,
+            };
             res.json(404, context);
         }
         res.json(docs[0]);
