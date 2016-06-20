@@ -13,6 +13,7 @@ var pkg = require('./package.json');
 var app = express();
 
 var logDirectory = __dirname + '/log';
+
 // ensure log directory exists
 if (fs.existsSync(logDirectory)) {
   fs.mkdirSync(logDirectory);
@@ -20,15 +21,15 @@ if (fs.existsSync(logDirectory)) {
 
 // create a rotating write stream
 var accessLogStream = FileStreamRotator.getStream({
-    filename: logDirectory + '/access.%DATE%.log',
-    frequency: 'daily',
-    verbose: false,
-    date_format: "YYYY-MM-DD"
+  filename: logDirectory + '/access.%DATE%.log',
+  frequency: 'daily',
+  verbose: false,
+  date_format: 'YYYY-MM-DD',
 });
 
 // setup the logger
 app.use(morgan('combined', {
-    stream: accessLogStream
+  stream: accessLogStream,
 }));
 
 // express.js router class
@@ -37,36 +38,37 @@ var router = express.Router();
 /**
  * Route /teapot
  */
-router.get('/teapot', function(req, res) {
-    res.status(418);
-    res.send('I\'m a teapot!');
+router.get('/teapot', function (req, res) {
+  res.status(418);
+  res.send('I\'m a teapot!');
 });
 
 /**
  * GET /version
  */
-router.get('/version', function(req, res) {
-    res.send(pkg.version);
+router.get('/version', function (req, res) {
+  res.send(pkg.version);
 });
 
 /**
  * GET /talks
  */
-router.get('/talks', function(req, res) {
-    var limit = 25;
-    libtlks.talk.latest(config.mongodb, limit, null, function(err, talks) {
-        if (err) {
-            console.log(err);
-            process.exit(1);
-        }
-        res.json(talks);
-    });
+router.get('/talks', function (req, res) {
+  var limit = 25;
+  libtlks.talk.latest(config.mongodb, limit, null, function (err, talks) {
+    if (err) {
+      console.log(err);
+      process.exit(1);
+    }
+
+    res.json(talks);
+  });
 });
 
 /**
  * GET /talks/:id
  */
-router.get('/talks/id/:id', function(req, res) {
+router.get('/talks/id/:id', function (req, res) {
     var id = req.params.id;
     libtlks.talk.get(config.mongodb, id, function(err, docs) {
         if (err) {
@@ -75,7 +77,7 @@ router.get('/talks/id/:id', function(req, res) {
         }
         if (docs === null) {
             var context = {
-                message: "Talk ID not found.",
+                message: 'Talk ID not found.',
                 error: 404,
             };
             res.json(404, context);

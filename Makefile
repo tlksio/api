@@ -1,5 +1,5 @@
 lint:
-	./node_modules/.bin/gulp jshint
+	./node_modules/.bin/gulp jscs
 
 all: lint
 
