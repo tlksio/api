@@ -3,3 +3,4 @@ log
 test/*.txt
 .idea
 *.iml
+config.json

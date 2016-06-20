@@ -14,8 +14,10 @@ var app = express();
 
 var logDirectory = __dirname + '/log';
 
+console.log(logDirectory);
+
 // ensure log directory exists
-if (fs.existsSync(logDirectory)) {
+if (!fs.existsSync(logDirectory)) {
   fs.mkdirSync(logDirectory);
 }
 
