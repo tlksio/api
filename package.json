@@ -4,7 +4,7 @@
   "description": "api.tlks.io",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon -L index.js",
     "test": "make all"
   },
   "repository": {
@@ -34,6 +34,7 @@
     "express": "^4.12.4",
     "file-stream-rotator": "0.0.6",
     "libtlks": "git://github.com/tlksio/libtlks#develop",
-    "morgan": "^1.5.3"
+    "morgan": "^1.5.3",
+    "nodemon": "^1.10.2"
   }
 }

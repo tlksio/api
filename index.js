@@ -42,7 +42,7 @@ var router = express.Router();
  */
 router.get('/teapot', function (req, res) {
   res.status(418);
-  res.send('I\'m a teapot!');
+  res.send('I\'m a teapot!!');
 });
 
 /**
